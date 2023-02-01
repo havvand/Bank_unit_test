@@ -4,6 +4,7 @@ public abstract class BankAccount
 {
     protected double balance;
     protected Customer owner;
+
     protected HashSet<Transaction> transactions = new HashSet<>();
 
     public BankAccount()
@@ -11,13 +12,13 @@ public abstract class BankAccount
 
     }
 
-    public abstract void setOwner();
+    public abstract void setOwner(Customer owner);
 
-    public abstract boolean withdraw();
+    public abstract boolean withdraw(double amount);
 
     public int getId()
     {
-        return owner.getId();
+        return owner.getID();
     }
 
     public Transaction getTransactions()

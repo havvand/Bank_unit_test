@@ -1,14 +1,16 @@
 public class PremiumAccount extends BankAccount
 {
     @Override
-    public void setOwner()
+    public void setOwner(Customer owner)
     {
-        owner = new Customer("Ole",2121);
+        this.owner = owner;
     }
 
     @Override
-    public boolean withdraw()
+    public boolean withdraw(double amount)
     {
+        this.balance -= amount;
+
         return false;
     }
 }
